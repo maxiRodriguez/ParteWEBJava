@@ -19,8 +19,10 @@ public class CtrlPartida {
 	ArrayList<Pieza> piezas;
 	
 	public Partida buscarPartida(String dni1, String dni2) {
+		
 		Jugador j1 = catJug.getByDni(dni1);
 		Jugador j2 = catJug.getByDni(dni2);
+		
 		p = catPart.getByJugadores(j1, j2);
 		p.setBlancas(catPie.getPiezas(p.getIdPartida(), "Blanca"));
 		p.setNegras(catPie.getPiezas(p.getIdPartida(), "Negro"));		
