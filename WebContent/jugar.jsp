@@ -14,6 +14,7 @@
 </head>
 <body>
 	<h1> Partida Ajederez </h1>
+	
 	<% Partida p = (Partida) session.getAttribute("partSession");%>
 	
 	<div>

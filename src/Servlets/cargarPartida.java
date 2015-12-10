@@ -37,6 +37,7 @@ public class cargarPartida extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 		CtrlPartida ctrl = new CtrlPartida();
 		
 		String dni1 = String.valueOf(request.getParameter("dniJug1"));
@@ -45,13 +46,10 @@ public class cargarPartida extends HttpServlet {
 		Partida p = new Partida();
 		
 		p = ctrl.buscarPartida(dni1, dni2);
-		
-		if (p != null)
-		{
-			//Redirecciono a jugar.jsp
-			request.getSession().setAttribute("partSession", p);
-			request.getRequestDispatcher("jugar.jsp").forward(request, response);
-		}
+
+		//Redirecciono a jugar.jsp
+		request.getSession().setAttribute("partSession", p);
+		request.getRequestDispatcher("jugar.jsp").forward(request, response);
 		
 		
 	}

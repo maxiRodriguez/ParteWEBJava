@@ -20,7 +20,7 @@ public class CatalogoPiezas {
 		PreparedStatement stmt=null;
 		try {
 			stmt = 	FactoryConexion.getInstancia().getConn().prepareStatement(
-					"select nombre, color, estado, posicion from piezas where idPartida = ? and color = ?");
+					"select nombre, color, estado, posicion from piezas where idPartida = ? and color = ? and estado = true");
 			stmt.setInt(1, idPartida);
 			stmt.setString(2, color);
 			rs = stmt.executeQuery();
@@ -48,7 +48,7 @@ public class CatalogoPiezas {
 					p = new Rey();
 					break;
 					
-				case "Dama":
+				case "Reina":
 					p = new Reina();
 					break;
 

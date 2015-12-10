@@ -58,17 +58,9 @@ public class moverPieza extends HttpServlet {
 		else
 				response.getWriter().append("Movimiento Invalido");
 		
-//		if(partSession.finPartida().equalsIgnoreCase("Negro") || partSession.finPartida().equalsIgnoreCase("Blanca") )
-//		{
-//			request.getSession().setAttribute("partSession", partSession);
-//			response.getWriter().append("Fin del juego").append(partSession.finPartida());	
-//		}
-		
-		//else
-		{	
-			request.getSession().setAttribute("partSession", partSession);
-			request.getRequestDispatcher("jugar.jsp").forward(request, response);
-		}
+		request.getSession().setAttribute("partSession", partSession);
+		request.getRequestDispatcher("jugar.jsp").forward(request, response);
+
 
 	}
 	
